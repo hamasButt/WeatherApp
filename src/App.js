@@ -1,10 +1,11 @@
+import {WeatherApp} from "./components/WeatherApp";
 
 function App() {
-  return (
-    <div className="App">
-      hello
-    </div>
-  );
+    return (
+        <>
+            <WeatherApp/>
+        </>
+    );
 }
 
 export default App;

@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom'
+import './styles/index.css';
 import App from './App';
+import {AppState} from "./services/context/app-state";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <App />
-);
+ReactDOM.render(
+    <AppState>
+        <App/>
+    </AppState>, document.getElementById('root')
+)
+;
