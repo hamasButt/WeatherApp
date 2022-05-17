@@ -4,15 +4,19 @@ import { useContext, useEffect } from "react";
 import AppContext from "../services/context/AppContext";
 
 export const WeatherApp = () => {
-    const { weathers, query, setQuery, setWeathers, search } = useContext(AppContext)
+    const { weathers, query, setQuery, search } = useContext(AppContext)
     const { weather, name, main } = weathers
 
     useEffect(() => {
         search('Rawalpindi')
         setQuery('')
-    }, [setQuery, setWeathers])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const searchCity = (e) => {
+        if (query === '') {
+            return
+        }
         if (e.key === 'Enter') {
             search()
         }
