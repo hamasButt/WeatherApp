@@ -11,7 +11,7 @@ export const WeatherApp = () => {
         search('Rawalpindi')
         setQuery('')
 
-    }, [])
+    }, [search,setQuery])
 
     const searchCity = (e) => {
         if (e.key === 'Enter') {
