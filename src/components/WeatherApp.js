@@ -1,17 +1,16 @@
-import {Location} from "./Location";
-import {Tempreature} from "./Tempreature";
-import {useContext, useEffect} from "react";
+import { Location } from "./Location";
+import { Tempreature } from "./Tempreature";
+import { useContext, useEffect } from "react";
 import AppContext from "../services/context/AppContext";
 
 export const WeatherApp = () => {
-    const {weathers, query, setQuery, search} = useContext(AppContext)
-    const {weather, name, main} = weathers
+    const { weathers, query, setQuery, setWeathers, search } = useContext(AppContext)
+    const { weather, name, main } = weathers
 
     useEffect(() => {
         search('Rawalpindi')
         setQuery('')
-
-    }, [search,setQuery])
+    }, [setQuery, setWeathers])
 
     const searchCity = (e) => {
         if (e.key === 'Enter') {
@@ -29,7 +28,7 @@ export const WeatherApp = () => {
                         value={query}
                         placeholder="please type..."
                         className="search-bar"
-                        type="text"/>
+                        type="text" />
                 </div>
                 {(typeof main != 'undefined')
                     ?

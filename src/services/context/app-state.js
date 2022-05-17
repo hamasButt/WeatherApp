@@ -8,7 +8,7 @@ export const AppState = ({children}) => {
     const [weathers, setWeathers] = useState('')
     const [query, setQuery] = useState('')
 
-    const search = (cityName) => {
+    const  search = (cityName) => {
         console.log(cityName)
         axios.get(`${api.baseUrl}weather?q=${query === '' ? cityName : query}&units=metric&APPID=${api.key}`)
             .then(result => {
